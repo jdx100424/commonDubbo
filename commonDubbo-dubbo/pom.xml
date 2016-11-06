@@ -16,11 +16,5 @@
       <version>0.0.2</version>
       <type>jar</type>
     </dependency>
-    <dependency>
-      <groupId>commonDubbo-dao</groupId>
-      <artifactId>commonDubbo-dao</artifactId>
-      <version>0.0.2</version>
-      <type>jar</type>
-    </dependency>
   </dependencies>
 </project>
