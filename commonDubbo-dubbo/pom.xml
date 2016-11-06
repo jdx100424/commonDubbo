@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>commonDubbo</groupId>
+    <artifactId>commonDubbo</artifactId>
+    <version>0.0.2</version>
+  </parent>
+  <groupId>commonDubbo-dubbo</groupId>
+  <artifactId>commonDubbo-dubbo</artifactId>
+  <packaging>jar</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>commonDubbo-util</groupId>
+      <artifactId>commonDubbo-util</artifactId>
+      <version>0.0.2</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>commonDubbo-dao</groupId>
+      <artifactId>commonDubbo-dao</artifactId>
+      <version>0.0.2</version>
+      <type>jar</type>
+    </dependency>
+  </dependencies>
+</project>
