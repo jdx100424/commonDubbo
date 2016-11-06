@@ -79,11 +79,40 @@
 		<slf4j-log4j12.version>1.7.7</slf4j-log4j12.version>
 		<persistence-api.version>1.0</persistence-api.version>
 		<json-alibaba>1.2.7</json-alibaba>
+		<dubbo-alibaba>2.5.3</dubbo-alibaba>
+		<zookeeper.version>3.4.8</zookeeper.version>
+		<zkclient.version>0.3</zkclient.version>
 	</properties>
 
 
 
 	<dependencies>
+		<dependency>
+    		<groupId>com.101tec</groupId>
+    		<artifactId>zkclient</artifactId>
+    		<version>${zkclient.version}</version>
+		</dependency>	
+ 		<dependency>  
+        	<groupId>com.alibaba</groupId>  
+        	<artifactId>dubbo</artifactId>  
+        	<version>${dubbo-alibaba}</version>  
+        	<exclusions>
+            	<exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>netty</artifactId>
+                    <groupId>org.jboss.netty</groupId>
+                </exclusion>
+            </exclusions>
+     	</dependency>  
+       
+      	<dependency>  
+        	<groupId>org.apache.zookeeper</groupId>  
+			<artifactId>zookeeper</artifactId>  
+			<version>${zookeeper.version}</version>  
+     	</dependency>  	
 		<dependency>
    			<groupId>com.alibaba</groupId>
     		<artifactId>fastjson</artifactId>

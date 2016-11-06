@@ -12,7 +12,7 @@ import com.maoshen.echo.domain.Echo;
 import com.maoshen.echo.dubbo.EchoDubbo;
 import com.maoshen.echo.service.EchoService;
 
-@Service("echoServiceImpl")
+@Service("echoDubboImpl")
 public class EchoDubboImpl implements EchoDubbo {
 	@Autowired
 	@Qualifier("echoServiceImpl")

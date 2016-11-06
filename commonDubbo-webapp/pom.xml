@@ -17,6 +17,12 @@
       <type>jar</type>
     </dependency>
     <dependency>
+      <groupId>commonDubbo-dubbo-impl</groupId>
+      <artifactId>commonDubbo-dubbo-impl</artifactId>
+      <version>0.0.2</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
       <groupId>commonDubbo-util</groupId>
       <artifactId>commonDubbo-util</artifactId>
       <version>0.0.2</version>
