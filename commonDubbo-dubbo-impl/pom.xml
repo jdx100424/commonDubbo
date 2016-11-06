@@ -18,8 +18,8 @@
     </dependency>
    
     <dependency>
-      <groupId>commonDubbo-service</groupId>
-      <artifactId>commonDubbo-service</artifactId>
+      <groupId>commonDubbo-service-impl</groupId>
+      <artifactId>commonDubbo-service-impl</artifactId>
       <version>0.0.2</version>
       <type>jar</type>
     </dependency> 
