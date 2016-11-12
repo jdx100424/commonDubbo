@@ -13,34 +13,35 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
         http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
-        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
-        >
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<!-- jedis pool配置 -->
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
 
-	<!--i18n -->
-	<bean id="messageSource"
-		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basenames">
-			<list>
-				<value>classpath:i18n/messages</value>
-			</list>
+	</bean>
+	<bean id="jedisFactory"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+		<property name="usePool" value="true" />
+		<property name="hostName" value="127.0.0.1" />
+		<property name="password" value="" />
+		<property name="port" value="6379" />
+		<constructor-arg index="0" ref="jedisPoolConfig" />
+	</bean>
+	<!-- spring data redis -->
+	<bean id="jedisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory" ref="jedisFactory" />
+		<property name="keySerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
 		</property>
-		<property name="defaultEncoding" value="UTF-8" />
-		<property name="fallbackToSystemLocale" value="false" />
+		<property name="hashKeySerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+		</property>
 	</bean>
-
-	<!-- validator -->
-	<bean id="validator"
-		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-		<property name="validationMessageSource" ref="messageSource" />
+	
+	<bean id="redisService" class="com.maoshen.component.redis.RedisService">
+		<property name="jedisTemplate" ref="jedisTemplate"/>
 	</bean>
-
-	<context:component-scan base-package="com.maoshen" />
-	<context:annotation-config />
-
-	<!-- sqldb,dubbo,redis,timeTask -->
-    <import resource="sqlContext.xml" />
-	<import resource="dubboContext.xml" />
-	<import resource="redisContext.xml" />
 </beans>
 
 
