@@ -16,6 +16,19 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
         >
 
+  	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+        <property name="locations">  
+           <list>  
+              <!-- 这里支持多种寻址方式：classpath和file -->  
+              <value>classpath:kafka.properties</value>  
+              <value>classpath:mysql.properties</value>  
+              <value>classpath:redis.properties</value>  
+              <value>classpath:zookeeper.properties</value>  
+              <value>classpath:dubbo.properties</value>  
+            </list>  
+        </property>  
+    </bean> 
+
 	<!--i18n -->
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
