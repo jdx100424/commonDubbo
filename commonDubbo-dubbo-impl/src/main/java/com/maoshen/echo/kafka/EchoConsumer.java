@@ -13,6 +13,9 @@ import com.maoshen.component.kafka.dto.MessageVo;
 @Service
 public class EchoConsumer extends BaseConsumer {
 	private static final Logger LOGGER = Logger.getLogger(BaseConsumer.class);
+	public EchoConsumer(){
+		super();
+	}
 	@Override
 	public void onMessage(MessageDto dto) {
 		LOGGER.info("EchoConsumer receive message start,value is:" + JSONObject.toJSONString(dto) + ",time is:" + new Date());
