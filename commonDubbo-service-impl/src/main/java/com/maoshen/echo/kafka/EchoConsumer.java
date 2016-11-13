@@ -19,11 +19,6 @@ public class EchoConsumer extends BaseConsumer {
 	@Override
 	public void onMessage(MessageDto dto) {
 		LOGGER.info("EchoConsumer receive message start,value is:" + JSONObject.toJSONString(dto) + ",time is:" + new Date());
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			LOGGER.error(e.getMessage(),e);
-		}
 		LOGGER.info("EchoConsumer receive message end,time is:"+ new Date());
 	}
 
