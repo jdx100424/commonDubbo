@@ -28,14 +28,14 @@ public class EchoConsumer extends BaseConsumer {
 	}
 	@Override
 	public void onMessage(MessageDto dto) {
-		LOGGER.error("EchoConsumer receive message start,value is:" + JSONObject.toJSONString(dto) + ",time is:" + new Date());
-		LOGGER.error("EchoConsumer receive message end,time is:"+ new Date());
+		LOGGER.warn("EchoConsumer receive message start,value is:" + JSONObject.toJSONString(dto) + ",time is:" + new Date());
+		LOGGER.warn("EchoConsumer receive message end,time is:"+ new Date());
 		
 		Map<String,Object> sendMapSub = new HashMap<String,Object>();
 		sendMapSub.put("jdxSub", UUID.randomUUID().toString());
 		baseProducer.send(MessageVo.ECHO_MESSAGE_SUB.getTopicName(),sendMapSub,dto.getRequestId());
 		
-		String s = "f";
+		String s = "5";
 		int i = Integer.parseInt(s);
 	}
 

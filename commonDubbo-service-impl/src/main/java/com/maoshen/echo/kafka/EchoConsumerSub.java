@@ -18,10 +18,10 @@ public class EchoConsumerSub extends BaseConsumer {
 	}
 	@Override
 	public void onMessage(MessageDto dto) {
-		LOGGER.error("EchoConsumerSub receive message start,value is:" + JSONObject.toJSONString(dto) + ",time is:" + new Date());
-		LOGGER.error("EchoConsumerSub receive message end,time is:"+ new Date());
-		String s = "f";
-		//int i = Integer.parseInt(s);
+		LOGGER.warn("EchoConsumerSub receive message start,value is:" + JSONObject.toJSONString(dto) + ",time is:" + new Date());
+		LOGGER.warn("EchoConsumerSub receive message end,time is:"+ new Date());
+		String s = "5";
+		int i = Integer.parseInt(s);
 	}
 
 	@Override
