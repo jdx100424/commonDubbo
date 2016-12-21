@@ -33,7 +33,8 @@ public class EchoConsumer extends BaseConsumer {
 		
 		Map<String,Object> sendMapSub = new HashMap<String,Object>();
 		sendMapSub.put("jdxSub", UUID.randomUUID().toString());
-		baseProducer.send(MessageVo.ECHO_MESSAGE_SUB.getTopicName(),sendMapSub,dto.getRequestId());
+		MessageDto dtoSub = new MessageDto(sendMapSub,dto.getRequestId());
+		baseProducer.send(MessageVo.ECHO_MESSAGE_SUB.getTopicName(),dtoSub);
 		
 		String s = "5";
 		int i = Integer.parseInt(s);
