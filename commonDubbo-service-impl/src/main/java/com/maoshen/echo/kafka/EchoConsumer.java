@@ -15,6 +15,7 @@ import com.maoshen.component.kafka.BaseConsumer;
 import com.maoshen.component.kafka.BaseProducer;
 import com.maoshen.component.kafka.dto.MessageDto;
 import com.maoshen.component.kafka.dto.MessageVo;
+import com.maoshen.component.rest.UserRestContext;
 
 @Service
 public class EchoConsumer extends BaseConsumer {
@@ -33,8 +34,12 @@ public class EchoConsumer extends BaseConsumer {
 		
 		Map<String,Object> sendMapSub = new HashMap<String,Object>();
 		sendMapSub.put("jdxSub", UUID.randomUUID().toString());
-		MessageDto dtoSub = new MessageDto(sendMapSub,dto.getRequestId());
-		baseProducer.send(MessageVo.ECHO_MESSAGE_SUB.getTopicName(),dtoSub);
+		
+		LOGGER.warn(dto.getUserRestContext().getAccessToken());
+		LOGGER.warn(dto.getUserRestContext().getRequestId());
+		
+		LOGGER.warn(UserRestContext.get().getAccessToken());
+		LOGGER.warn(UserRestContext.get().getRequestId());
 	}
 
 	@Override
