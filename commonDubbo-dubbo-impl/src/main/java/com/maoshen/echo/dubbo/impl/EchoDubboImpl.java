@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.maoshen.component.rest.UserRestContext;
 import com.maoshen.echo.dubbo.EchoDubbo;
 import com.maoshen.echo.service.EchoService;
 
@@ -20,9 +21,12 @@ public class EchoDubboImpl implements EchoDubbo {
 
 	@Override
 	public boolean checkEchoIsExistByDubbo(Long id) {
-		LOGGER.info("dubbo method checkEchoIsExistByDubbo is start ,date:"+new Date());
+		LOGGER.warn("dubbo method checkEchoIsExistByDubbo is start ,date:"+new Date());
 		boolean result = echoService.checkEchoIsExist(id);
-		LOGGER.info("dubbo method checkEchoIsExistByDubbo is end ,date:"+new Date());
+		LOGGER.warn("dubbo method checkEchoIsExistByDubbo is end ,date:"+new Date());
+		
+		LOGGER.warn("dubboRpc:"+UserRestContext.get().getAccessToken());
+		LOGGER.warn("dubboRpc:"+UserRestContext.get().getRequestId());
 		return result;
 	}
 }
