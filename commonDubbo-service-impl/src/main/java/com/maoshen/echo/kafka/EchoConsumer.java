@@ -35,17 +35,10 @@ public class EchoConsumer extends BaseConsumer {
 		sendMapSub.put("jdxSub", UUID.randomUUID().toString());
 		MessageDto dtoSub = new MessageDto(sendMapSub,dto.getRequestId());
 		baseProducer.send(MessageVo.ECHO_MESSAGE_SUB.getTopicName(),dtoSub);
-		
-		String s = "5";
-		int i = Integer.parseInt(s);
 	}
 
 	@Override
 	public MessageVo getGroupIdANdTopicName() {		
 		return MessageVo.ECHO_MESSAGE;
-	}
-	@Override
-	public boolean isResend() {
-		return true;
 	}
 }

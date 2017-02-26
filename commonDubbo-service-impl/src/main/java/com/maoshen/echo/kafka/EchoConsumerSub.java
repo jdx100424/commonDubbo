@@ -20,16 +20,10 @@ public class EchoConsumerSub extends BaseConsumer {
 	public void onMessage(MessageDto dto) {
 		LOGGER.warn("EchoConsumerSub receive message start,value is:" + JSONObject.toJSONString(dto) + ",time is:" + new Date());
 		LOGGER.warn("EchoConsumerSub receive message end,time is:"+ new Date());
-		String s = "5";
-		int i = Integer.parseInt(s);
 	}
 
 	@Override
 	public MessageVo getGroupIdANdTopicName() {		
 		return MessageVo.ECHO_MESSAGE_SUB;
-	}
-	@Override
-	public boolean isResend() {
-		return true;
 	}
 }
