@@ -1,6 +1,7 @@
 package com.maoshen.echo.dubbo.impl;
 
 import java.util.Date;
+import java.util.Random;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,17 @@ public class EchoDubboImpl implements EchoDubbo {
 		
 		LOGGER.warn("dubboRpc:"+UserRestContext.get().getAccessToken());
 		LOGGER.warn("dubboRpc:"+UserRestContext.get().getRequestId());
+		
+		Random r = new Random();
+		if(r.nextBoolean()){
+			LOGGER.info("random result is true");
+			try {
+				Thread.sleep(15*1000);
+			} catch (InterruptedException e) {
+				LOGGER.error(e.getMessage(),e);
+			}
+		}
+		
 		return result;
 	}
 }
