@@ -48,9 +48,9 @@
             </properties>  
 		</profile>
 		<profile>
-			<id>local2</id>
+			<id>qa</id>
 			 <properties>  
-                <disconf.env>local2</disconf.env>  
+                <disconf.env>qa</disconf.env>  
             </properties>
 		</profile>
 	</profiles>
