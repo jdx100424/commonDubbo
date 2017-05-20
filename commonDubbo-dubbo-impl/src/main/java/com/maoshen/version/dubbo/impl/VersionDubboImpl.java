@@ -8,6 +8,6 @@ import com.maoshen.version.dubbo.VersionDubbo;
 public class VersionDubboImpl implements VersionDubbo{
 	@Override
 	public String getVersion() {
-		return System.getProperty("disconf.env");
+		return System.getProperty("env");
 	}
 }
