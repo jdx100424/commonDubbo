@@ -19,6 +19,12 @@ public class EchoConsumerSub extends BaseConsumer {
 	@Override
 	public void onMessage(MessageDto dto) {
 		LOGGER.warn("EchoConsumerSub receive message start,value is:" + JSONObject.toJSONString(dto) + ",time is:" + new Date());
+		try {
+			Thread.sleep(600000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		LOGGER.warn("EchoConsumerSub receive message end,time is:"+ new Date());
 	}
 
