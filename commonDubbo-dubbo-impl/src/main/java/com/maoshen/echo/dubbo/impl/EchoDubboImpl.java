@@ -30,7 +30,7 @@ public class EchoDubboImpl implements EchoDubbo {
 		LOGGER.warn("dubboRpc:"+UserRestContext.get().getRequestId());
 		
 		Random r = new Random();
-		if(r.nextBoolean()){
+		if(false){
 			LOGGER.info("random result is true");
 			try {
 				Thread.sleep(15*1000);

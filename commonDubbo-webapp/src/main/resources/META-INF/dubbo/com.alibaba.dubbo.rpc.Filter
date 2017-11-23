@@ -1,2 +1,3 @@
 dubboContextFilter=com.alibaba.dubbo.rpc.filter.DubboContextFilter
+dubboContextFilter2=com.github.kristofa.brave.dubbo.BraveProviderFilter
 

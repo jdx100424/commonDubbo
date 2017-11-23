@@ -25,7 +25,8 @@
     <!-- 要暴露的服务接口 -->    
 	<dubbo:service interface="com.maoshen.echo.dubbo.EchoDubbo" ref="echoDubboImpl" /> 
 	<dubbo:service interface="com.maoshen.version.dubbo.VersionDubbo" ref="versionDubboImpl" version="${dubbo.version}"/>   
- 	<dubbo:provider filter="dubboContextFilter" />      
+ 	<dubbo:provider filter="dubboContextFilter,dubboContextFilter2" />     
+
 </beans>
 
 
